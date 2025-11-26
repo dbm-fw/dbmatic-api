@@ -1,3 +1,4 @@
+<h2>DBMatic API Documentation</h2>
 <p id="bkmrk-the-dbmatic-api-prov">The DBMatic API provides access to vessel journals, equipment inventories, and measurement data.<br>This quick start guide explains how to authenticate and query the API.</p>
 <p id="bkmrk-for-schema-definitio">For schema definitions and data types, please refer to:</p>
 <ul id="bkmrk-poseidat-documentati">
