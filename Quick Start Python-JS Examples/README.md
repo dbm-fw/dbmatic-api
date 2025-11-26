@@ -102,7 +102,7 @@ fetch(url, {
   .catch(err =&gt; console.error(err));</code></pre>
 <hr id="bkmrk--5">
 <h4 id="bkmrk-endpoints-1" data-start="3571" data-end="3583">Endpoints</h4>
-<p id="bkmrk-%28already-explained-a" data-start="3585" data-end="3674">(Already explained above with request/response examples &mdash; kept in place for reference.)</p>
+<p id="bkmrk-%28already-explained-a" data-start="3585" data-end="3674">(Already explained above with request/response examples, kept in place for reference.)</p>
 <hr id="bkmrk--6" data-start="3676" data-end="3679">
 <h4 id="bkmrk-notes" data-start="3681" data-end="3689">Notes</h4>
 <ul id="bkmrk-all-timestamps-are-i" data-start="3690" data-end="3927">
