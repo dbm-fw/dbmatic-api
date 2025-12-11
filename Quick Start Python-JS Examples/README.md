@@ -7,7 +7,7 @@
 </ul>
 <hr id="bkmrk-">
 <h4 id="bkmrk-base-url">Base URL</h4>
-<pre id="bkmrk-https%3A%2F%2Fapi.dbmatic."><code class="language-">https://api.dbmatic.eu/api/v1</code></pre>
+<pre id="bkmrk-base-url"><code class="language-">https://{base-url}/api/v1</code></pre>
 <hr id="bkmrk--1">
 <h4 id="bkmrk-authentication">Authentication</h4>
 <p id="bkmrk-all-requests-require">All requests require a Bearer Token (API key), which will be provided by DBMatic.</p>
@@ -18,19 +18,19 @@
 <p id="bkmrk-replace-your_api_tok">Replace <code data-start="879" data-end="895">YOUR_API_TOKEN</code> with the token provided by DBMatic.<br data-start="931" data-end="934">Examples are provided in <strong data-start="959" data-end="967">cURL</strong>, <strong data-start="969" data-end="990">Python (requests)</strong>, and <strong data-start="996" data-end="1018">JavaScript (fetch)</strong>.</p>
 <h4 id="bkmrk-1.-list-available-jo" data-start="1026" data-end="1056">1. List Available Journals</h4>
 <p id="bkmrk-curl" data-start="1058" data-end="1066"><strong data-start="1058" data-end="1066">cURL</strong></p>
-<pre id="bkmrk-curl--x-get-%22https%3A%2F"><code class="language-bash">curl -X GET "https://api.dbmatic.eu/api/v1/journals" \
+<pre id="bkmrk-curl--x-get-%22https%3A%2F"><code class="language-bash">curl -X GET "https://{base-url}/api/v1/journals" \
   -H "Authorization: Bearer YOUR_API_TOKEN"</code></pre>
 <p id="bkmrk-python"><strong>Python</strong></p>
 <pre id="bkmrk-import-requests-url-"><code class="language-python">import requests
 
-url = "https://api.dbmatic.eu/api/v1/journals"
+url = "https://{base-url}/api/v1/journals"
 headers = {"Authorization": "Bearer YOUR_API_TOKEN"}
 
 response = requests.get(url, headers=headers)
 print(response.json())</code></pre>
 <p id="bkmrk-%C2%A0"></p>
 <p id="bkmrk-javascript"><strong>JavaScript</strong></p>
-<pre id="bkmrk-const-url-%3D-%22https%3A%2F"><code class="language-javascript">const url = "https://api.dbmatic.eu/api/v1/journals";
+<pre id="bkmrk-const-url-%3D-%22https%3A%2F"><code class="language-javascript">const url = "https://{base-url}/api/v1/journals";
 
 fetch(url, {
   headers: {
@@ -43,20 +43,20 @@ fetch(url, {
 <hr id="bkmrk--3">
 <h4 id="bkmrk-2.-get-equipment-inv">2. Get Equipment Inventory for a Journal</h4>
 <p id="bkmrk-curl-1" data-start="1058" data-end="1066"><strong data-start="1058" data-end="1066">cURL</strong></p>
-<pre id="bkmrk-curl--x-get-%22https%3A%2F-1"><code class="language-bash">curl -X GET "https://api.dbmatic.eu/api/v1/journals/{journal_id}/equipment_inventory" \
+<pre id="bkmrk-curl--x-get-%22https%3A%2F-1"><code class="language-bash">curl -X GET "https://{base-url}/api/v1/journals/{journal_id}/equipment_inventory" \
   -H "Authorization: Bearer YOUR_API_TOKEN"</code></pre>
 <p id="bkmrk-python-1"><strong>Python</strong></p>
 <pre id="bkmrk-import-requests-jour"><code class="language-python">import requests
 
 journal_id = "YOUR_JOURNAL_ID"
-url = f"https://api.dbmatic.eu/api/v1/journals/{journal_id}/equipment_inventory"
+url = f"https://{base-url}/api/v1/journals/{journal_id}/equipment_inventory"
 headers = {"Authorization": "Bearer YOUR_API_TOKEN"}
 
 response = requests.get(url, headers=headers)
 print(response.json())</code></pre>
 <p id="bkmrk-javascript-1"><strong>JavaScript</strong></p>
 <pre id="bkmrk-const-journalid-%3D-%22y"><code class="language-javascript">const journalId = "YOUR_JOURNAL_ID";
-const url = `https://api.dbmatic.eu/api/v1/journals/${journalId}/equipment_inventory`;
+const url = `https://{base-url}/api/v1/journals/${journalId}/equipment_inventory`;
 
 fetch(url, {
   headers: {
@@ -69,7 +69,7 @@ fetch(url, {
 <hr id="bkmrk--4">
 <h4 id="bkmrk-3.-get-measurements-">3. Get Measurements for Equipment</h4>
 <p id="bkmrk-curl-2" data-start="1058" data-end="1066"><strong data-start="1058" data-end="1066">cURL</strong></p>
-<pre id="bkmrk-curl--x-get-%22https%3A%2F-2"><code class="language-bash">curl -X GET "https://api.dbmatic.eu/api/v1/journals/{journal_id}/measurements/{equipment_id}?start=1757512200&amp;stop=1757512800" \
+<pre id="bkmrk-curl--x-get-%22https%3A%2F-2"><code class="language-bash">curl -X GET "https://{base-url}/api/v1/journals/{journal_id}/measurements/{equipment_id}?start=1757512200&amp;stop=1757512800" \
   -H "Authorization: Bearer YOUR_API_TOKEN"</code></pre>
 <p id="bkmrk-python-2"><strong>Python</strong></p>
 <pre id="bkmrk-import-requests-jour-1"><code class="language-python">import requests
@@ -79,7 +79,7 @@ equipment_id = "YOUR_EQUIPMENT_ID"
 start = 1757512200
 stop = 1757512800
 
-url = f"https://api.dbmatic.eu/api/v1/journals/{journal_id}/measurements/{equipment_id}?start={start}&amp;stop={stop}"
+url = f"https://{base-url}/api/v1/journals/{journal_id}/measurements/{equipment_id}?start={start}&amp;stop={stop}"
 headers = {"Authorization": "Bearer YOUR_API_TOKEN"}
 
 response = requests.get(url, headers=headers)
@@ -90,7 +90,7 @@ const equipmentId = "YOUR_EQUIPMENT_ID";
 const start = 1757512200;
 const stop = 1757512800;
 
-const url = `https://api.dbmatic.eu/api/v1/journals/${journalId}/measurements/${equipmentId}?start=${start}&amp;stop=${stop}`;
+const url = `https://{base-url}/api/v1/journals/${journalId}/measurements/${equipmentId}?start=${start}&amp;stop=${stop}`;
 
 fetch(url, {
   headers: {
