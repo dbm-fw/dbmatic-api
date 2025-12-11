@@ -27,7 +27,7 @@ const errors = entry.validate();</code></pre>
 <hr id="bkmrk--1">
 <h4 id="bkmrk-3.-minimal-typed-api">3. Minimal typed API client</h4>
 <pre id="bkmrk-type-config-%3D-%7B-dbma"><code class="language-typescript">type Config = {
-  dbMaticAPIUrl: string; // e.g. "https://api.dbmatic.eu/api/v1"
+  dbMaticAPIUrl: string; // e.g. "https://{base-url}/api/v1"
   dbMaticBearer: string; // e.g. "Bearer &lt;your token&gt;"
 };
 
@@ -154,7 +154,7 @@ async function getDeviceMeasurements(
 <h4 id="bkmrk-6.-using-the-example">6. Using the example with your config helper</h4>
 <p id="bkmrk-this-mirrors-your-sn">This mirrors your snippet but plugs in types + validation and fixes <code data-start="6232" data-end="6238">stop</code>:</p>
 <pre id="bkmrk-const-configobj%3A-con"><code class="language-typescript">const configObj: Config = {
-  dbMaticAPIUrl: process.env.DBMATIC_API_URL ?? 'https://api.dbmatic.eu/api/v1',
+  dbMaticAPIUrl: process.env.DBMATIC_API_URL ?? 'https://{base-url}/api/v1',
   dbMaticBearer: `Bearer ${process.env.DBMATIC_TOKEN}`
 };
 
