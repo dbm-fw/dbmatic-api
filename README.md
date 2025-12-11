@@ -7,7 +7,7 @@
 </ul>
 <hr id="bkmrk-">
 <h4 id="bkmrk-base-url">Base URL</h4>
-<pre id="bkmrk-https%3A%2F%2Fapi.dbmatic."><code class="language-">https://api.dbmatic.eu/api/v1</code></pre>
+<pre id="bkmrk-base-url"><code class="language-">https://{base-url}/api/v1</code></pre>
 <hr id="bkmrk--1">
 <h4 id="bkmrk-authentication">Authentication</h4>
 <p id="bkmrk-all-requests-require">All requests require a Bearer Token (API key), which will be provided by DBMatic.</p>
@@ -20,7 +20,7 @@
 <p id="bkmrk-request"><strong>Request</strong></p>
 <pre id="bkmrk-get-%2Fjournals"><code class="language-">GET /journals</code></pre>
 <p id="bkmrk-example"><strong>Example</strong></p>
-<pre id="bkmrk-https%3A%2F%2Fapi.dbmatic.-1"><code class="language-">https://api.dbmatic.eu/api/v1/journals</code></pre>
+<pre id="bkmrk-base-url"><code class="language-">https://{base-url}/api/v1/journals</code></pre>
 <p id="bkmrk-response"><strong>Response</strong></p>
 <pre id="bkmrk-%5B-%7B-%22journal_id%22%3A-%224"><code class="language-json">[
   {
@@ -39,7 +39,7 @@
 <p id="bkmrk-request-1"><strong>Request</strong></p>
 <pre id="bkmrk-get-%2Fjournals%2F%7Bjourn"><code class="language-">GET /journals/{journal_id}/equipment_inventory</code></pre>
 <p id="bkmrk-example-1"><strong>Example</strong></p>
-<pre id="bkmrk-https%3A%2F%2Fapi.dbmatic.-2"><code class="language-">https://api.dbmatic.eu/api/v1/journals/4fe9a3a7-85fd-5607-9074-ead38b07d24b/equipment_inventory</code></pre>
+<pre id="bkmrk-base-url"><code class="language-">https://{base-url}/api/v1/journals/4fe9a3a7-85fd-5607-9074-ead38b07d24b/equipment_inventory</code></pre>
 <p id="bkmrk-response-1"><strong>Response</strong></p>
 <pre id="bkmrk-%7B-%22journal_id%22%3A-%224fe"><code class="language-json">{
   "journal_id": "4fe9a3a7-85fd-5607-9074-ead38b07d24b",
@@ -72,7 +72,7 @@
 <p id="bkmrk-request-2"><strong>Request</strong></p>
 <pre id="bkmrk-get-%2Fjournals%2F%7Bjourn-1"><code class="language-">GET /journals/{journal_id}/measurements/{equipment_id}?start={timestamp}&amp;stop={timestamp}</code></pre>
 <p id="bkmrk-example-2"><strong>Example</strong></p>
-<pre id="bkmrk-https%3A%2F%2Fapi.dbmatic.-3"><code class="language-">https://api.dbmatic.eu/api/v1/journals/4fe9a3a7-85fd-5607-9074-ead38b07d24b/measurements/14647a67-3932-626f-4444-000200000009?start=1757512200&amp;stop=1757512800</code></pre>
+<pre id="bkmrk-base-url"><code class="language-">https://{base-url}/api/v1/journals/4fe9a3a7-85fd-5607-9074-ead38b07d24b/measurements/14647a67-3932-626f-4444-000200000009?start=1757512200&amp;stop=1757512800</code></pre>
 <p id="bkmrk-response-2"><strong>Response</strong></p>
 <pre id="bkmrk-%5B-%7B-%22entry_type%22%3A-%22d"><code class="language-json">[
   {
