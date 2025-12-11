@@ -1,5 +1,5 @@
 <h2>DBMatic Client Example (Typscript)</h2>
-<p id="bkmrk-the-dbmatic-typescri" data-start="163" data-end="568">The <strong data-start="167" data-end="196">DBMatic TypeScript Client</strong> is a lightweight wrapper around the <a class="decorated-link" href="https://api.dbmatic.eu/api/v1" target="_new" rel="noopener" data-start="233" data-end="277">DBMatic API</a><br data-start="278" data-end="281">It handles authentication, request timeouts, and parsing of API responses. On top of that, it includes <strong data-start="384" data-end="399">type guards</strong> and a <strong data-start="406" data-end="420">normalizer</strong> that converts raw measurements into a consistent structure for <em data-start="484" data-end="489">all</em> sensor/device types (GNSS, RPM, Temperature, Fuel Consumption, Weather, etc.).</p>
+<p id="bkmrk-the-dbmatic-typescri" data-start="163" data-end="568">The <strong data-start="167" data-end="196">DBMatic TypeScript Client</strong> is a lightweight wrapper around the <a class="decorated-link" href="https://{base-url}/api/v1" target="_new" rel="noopener" data-start="233" data-end="277">DBMatic API</a><br data-start="278" data-end="281">It handles authentication, request timeouts, and parsing of API responses. On top of that, it includes <strong data-start="384" data-end="399">type guards</strong> and a <strong data-start="406" data-end="420">normalizer</strong> that converts raw measurements into a consistent structure for <em data-start="484" data-end="489">all</em> sensor/device types (GNSS, RPM, Temperature, Fuel Consumption, Weather, etc.).</p>
 <h4 id="bkmrk-features" data-start="570" data-end="581">Features</h4>
 <ul id="bkmrk-%F0%9F%94%91-authentication-via" data-start="582" data-end="882">
 <li data-start="582" data-end="624">
@@ -35,7 +35,7 @@
 
 async function main() {
   const client = new DBMaticClient({
-    baseUrl: 'https://api.dbmatic.eu/api/v1',
+    baseUrl: 'https://{base-url}/api/v1',
     token: 'YOUR_API_TOKEN'
   });
 
@@ -108,7 +108,7 @@ import { fetchAllMeasurementsForVessel } from "./fetch-all";
 
 async function run() {
   const client = new DBMaticClient({
-    baseUrl: "https://api.dbmatic.eu/api/v1",
+    baseUrl: "https://{base-url}/api/v1",
     token: "YOUR_API_TOKEN"
   });
 
@@ -235,7 +235,7 @@ run().catch(console.error);
 <h4 id="bkmrk-validation-%28optional">Validation (Optional)</h4>
 <p id="bkmrk-if-you-use-runtime-v">If you use runtime validation (AJV or the validator classes from <code data-start="4602" data-end="4621">@poseidat/schemas</code>), pass hooks into the client:</p>
 <pre id="bkmrk-const-client-%3D-new-d"><code class="language-typescript">const client = new DBMaticClient({
-  baseUrl: "https://api.dbmatic.eu/api/v1",
+  baseUrl: "https://{base-url}/api/v1",
   token: "YOUR_API_TOKEN",
   validate: {
     journals: (data) =&gt; [],            // return [] if valid, otherwise array of error strings
