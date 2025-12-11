@@ -4,7 +4,7 @@ import { fetchAllMeasurementsForVessel } from './fetch-all';
 
 async function main() {
   const client = new DBMaticClient({
-    baseUrl: process.env.DBMATIC_API_URL ?? 'https://api.dbmatic.eu/api/v1',
+    baseUrl: process.env.DBMATIC_API_URL ?? 'https://{base-url}/api/v1',
     token: process.env.DBMATIC_TOKEN ?? ''
   });
 
