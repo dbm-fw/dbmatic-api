@@ -16,7 +16,7 @@ import {
 } from './measurement-normalizers';
 
 export type DBMaticClientOptions = {
-  /** Base URL, e.g. "https://api.dbmatic.eu/api/v1" */
+  /** Base URL, e.g. "https://{base-url}/api/v1" */
   baseUrl: string;
   /** API token. "Bearer " will be auto-prefixed if missing */
   token: string;
