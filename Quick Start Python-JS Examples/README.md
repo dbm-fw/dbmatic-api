@@ -69,28 +69,28 @@ fetch(url, {
 <hr id="bkmrk--4">
 <h4 id="bkmrk-3.-get-measurements-">3. Get Measurements for Equipment</h4>
 <p id="bkmrk-curl-2" data-start="1058" data-end="1066"><strong data-start="1058" data-end="1066">cURL</strong></p>
-<pre id="bkmrk-curl--x-get-%22https%3A%2F-2"><code class="language-bash">curl -X GET "https://{base-url}/api/v1/journals/{journal_id}/measurements/{equipment_id}?start=1757512200&amp;stop=1757512800" \
+<pre id="bkmrk-curl--x-get-%22https%3A%2F-2"><code class="language-bash">curl -X GET "https://{base-url}/api/v1/journals/{journal_id}/measurements/{device_id}?start=1757512200&amp;end=1757512800" \
   -H "Authorization: Bearer YOUR_API_TOKEN"</code></pre>
 <p id="bkmrk-python-2"><strong>Python</strong></p>
 <pre id="bkmrk-import-requests-jour-1"><code class="language-python">import requests
 
 journal_id = "YOUR_JOURNAL_ID"
-equipment_id = "YOUR_EQUIPMENT_ID"
+device_id = "YOUR_DEVICE_ID"
 start = 1757512200
-stop = 1757512800
+end = 1757512800
 
-url = f"https://{base-url}/api/v1/journals/{journal_id}/measurements/{equipment_id}?start={start}&amp;stop={stop}"
+url = f"https://{base-url}/api/v1/journals/{journal_id}/measurements/{device_id}?start={start}&amp;end={end}"
 headers = {"Authorization": "Bearer YOUR_API_TOKEN"}
 
 response = requests.get(url, headers=headers)
 print(response.json())</code></pre>
 <p id="bkmrk-javascript-2"><strong>JavaScript</strong></p>
 <pre id="bkmrk-const-journalid-%3D-%22y-1"><code class="language-javascript">const journalId = "YOUR_JOURNAL_ID";
-const equipmentId = "YOUR_EQUIPMENT_ID";
+const equipmentId = "YOUR_DEVICE_ID";
 const start = 1757512200;
-const stop = 1757512800;
+const end = 1757512800;
 
-const url = `https://{base-url}/api/v1/journals/${journalId}/measurements/${equipmentId}?start=${start}&amp;stop=${stop}`;
+const url = `https://{base-url}/api/v1/journals/${journalId}/measurements/${equipmentId}?start=${start}&amp;end=${end}`;
 
 fetch(url, {
   headers: {
