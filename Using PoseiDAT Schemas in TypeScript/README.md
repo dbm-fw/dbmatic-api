@@ -77,9 +77,9 @@ async function getDeviceMeasurements(
   journalId: string,
   deviceId: string,
   startUnix: number,
-  stopUnix: number
+  endUnix: number
 ): Promise&lt;IEntryDeviceMeasurement[]&gt; {
-  const url = `${cfg.dbMaticAPIUrl}/journals/${journalId}/measurements/${deviceId}?start=${startUnix}&amp;stop=${stopUnix}`;
+  const url = `${cfg.dbMaticAPIUrl}/journals/${journalId}/measurements/${deviceId}?start=${startUnix}&amp;end=${endUnix}`;
   const res = await fetch(url, { method: 'GET', headers: makeHeaders(cfg) });
   if (!res.ok) throw new Error(`measurements failed: ${res.status} ${await res.text()}`);
   const data = (await res.json()) as IEntryDeviceMeasurement[];
@@ -152,7 +152,7 @@ async function getDeviceMeasurements(
 }</code></pre>
 <hr id="bkmrk--4">
 <h4 id="bkmrk-6.-using-the-example">6. Using the example with your config helper</h4>
-<p id="bkmrk-this-mirrors-your-sn">This mirrors your snippet but plugs in types + validation and fixes <code data-start="6232" data-end="6238">stop</code>:</p>
+<p id="bkmrk-this-mirrors-your-sn">This mirrors your snippet but plugs in types + validation and fixes <code data-start="6232" data-end="6238">end</code>:</p>
 <pre id="bkmrk-const-configobj%3A-con"><code class="language-typescript">const configObj: Config = {
   dbMaticAPIUrl: process.env.DBMATIC_API_URL ?? 'https://{base-url}/api/v1',
   dbMaticBearer: `Bearer ${process.env.DBMATIC_TOKEN}`
