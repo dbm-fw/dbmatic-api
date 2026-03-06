@@ -72,22 +72,22 @@ export class DBMaticClient {
   }
 
   /**
-   * GET /journals/{journal_id}/measurements/{device_id}?start={unix}&stop={unix}
+   * GET /journals/{journal_id}/measurements/{device_id}?start={unix}&end={unix}
    * @param startUnix seconds since epoch
-   * @param stopUnix seconds since epoch
+   * @param endUnix seconds since epoch
    */
   async getDeviceMeasurements(
     journalId: string,
     deviceId: string,
     startUnix: number,
-    stopUnix: number
+    endUnix: number
   ): Promise<IEntryDeviceMeasurement[]> {
     this.#requireId('journalId', journalId);
     this.#requireId('deviceId', deviceId);
-    if (!Number.isFinite(startUnix) || !Number.isFinite(stopUnix)) {
-      throw new Error('getDeviceMeasurements: startUnix and stopUnix must be finite numbers (seconds since epoch)');
+    if (!Number.isFinite(startUnix) || !Number.isFinite(endUnix)) {
+      throw new Error('getDeviceMeasurements: startUnix and endUnix must be finite numbers (seconds since epoch)');
     }
-    const qs = new URLSearchParams({ start: String(startUnix), stop: String(stopUnix) });
+    const qs = new URLSearchParams({ start: String(startUnix), end: String(endUnix) });
     const data = await this.request<IEntryDeviceMeasurement[]>(
       `/journals/${journalId}/measurements/${deviceId}?${qs}`
     );
@@ -102,9 +102,9 @@ export class DBMaticClient {
     journalId: string,
     deviceId: string,
     startUnix: number,
-    stopUnix: number
+    endUnix: number
   ): Promise<NormalizedMeasurement[]> {
-    const entries = await this.getDeviceMeasurements(journalId, deviceId, startUnix, stopUnix);
+    const entries = await this.getDeviceMeasurements(journalId, deviceId, startUnix, endUnix);
     return entries.map(normalizeMeasurement);
   }
 
