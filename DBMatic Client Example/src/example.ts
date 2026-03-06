@@ -15,11 +15,11 @@ async function main() {
   const journalId = vessel.journal_id;
 
   // 2) Timewindow (last 10 minutes)
-  const stop = Math.floor(Date.now() / 1000);
-  const start = stop - 10 * 60;
+  const end = Math.floor(Date.now() / 1000);
+  const start = end - 10 * 60;
 
   // 3) Fetch ALL devices + ALL measurements, normalized
-  const { results } = await fetchAllMeasurementsForVessel(client, journalId, start, stop, 6);
+  const { results } = await fetchAllMeasurementsForVessel(client, journalId, start, end, 6);
 
   // 4) Fan-out by kind, or store directly
   const all = results.flatMap(r => r.normalized);
