@@ -68,7 +68,7 @@
 </code></pre>
 <hr id="bkmrk--4">
 <h4 id="bkmrk-3.-get-measurements-" data-start="2149" data-end="2186">3. Get Measurements for Equipment</h4>
-<p id="bkmrk-use-the-equipment_id" data-start="2188" data-end="2344">Use the <code data-start="2196" data-end="2210">equipment_id</code> from the inventory to request measurement data.<br data-start="2258" data-end="2261">A timeframe must be specified with <code data-start="2296" data-end="2303">start</code> and <code data-start="2308" data-end="2314">stop</code> parameters (Unix timestamps).</p>
+<p id="bkmrk-use-the-device_id" data-start="2188" data-end="2344">Use the <code data-start="2196" data-end="2210">device_id</code> from the inventory to request measurement data.<br data-start="2258" data-end="2261">A timeframe must be specified with <code data-start="2296" data-end="2303">start</code> and <code data-start="2308" data-end="2314">stop</code> parameters (Unix timestamps).</p>
 <p id="bkmrk-request-2"><strong>Request</strong></p>
 <pre id="bkmrk-get-%2Fjournals%2F%7Bjourn-1"><code class="language-">GET /journals/{journal_id}/measurements/{device_id}?start={timestamp}&amp;stop={timestamp}</code></pre>
 <p id="bkmrk-example-2"><strong>Example</strong></p>
