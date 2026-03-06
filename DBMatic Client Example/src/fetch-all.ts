@@ -34,7 +34,7 @@ export async function fetchAllMeasurementsForVessel(
   client: DBMaticClient,
   journalId: string,
   startUnix: number,
-  stopUnix: number,
+  endUnix: number,
   concurrency = 4
 ) {
   const devices = await client.listDevices(journalId);
@@ -43,7 +43,7 @@ export async function fetchAllMeasurementsForVessel(
   const results = await Promise.all(
     devices.map(device =>
       limit(async () => {
-        const entries = await client.getDeviceMeasurements(journalId, device.device_id, startUnix, stopUnix);
+        const entries = await client.getDeviceMeasurements(journalId, device.device_id, startUnix, endUnix);
         const normalized = entries.map(normalizeMeasurement);
         return { device, normalized } as DeviceMeasurementBundle;
       })
